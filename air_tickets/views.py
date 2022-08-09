@@ -16,4 +16,3 @@ class TicketViewSet(ModelViewSet, GenericViewSet):
 class OrderViewSet(mixins.CreateModelMixin, mixins.DestroyModelMixin, GenericViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
-    permission_classes = [IsAuthenticated, IsAuthor]
