@@ -17,4 +17,3 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = '__all__'
     
-
