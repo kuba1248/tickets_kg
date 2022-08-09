@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets - KG</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <style>
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th {
+  background-color: #fce7bd;
+  color: white;
+}
+
+th,
+td {
+    width: 150px;
+    text-align: center;
+    background-color: #fce7bd;
+    font-size: 100%;
+    color: midnightblue;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+h2 {
+  color: #4287f5;
+}
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Create ticket</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Title<span class="required">*</span></label>
+                <div class="col-sm-10">
+                    {{ form.title }}
+                </div>
+            </div>
+            <hr>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Price<span class="required">*</span></label>
+                <div class="col-sm-10">
+                    {{ form.price }}
+                </div>
+            </div>
+            <hr>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">date arrival</label>
+                <div class="col-sm-10">
+                    {{ form.date_arrival }}
+                </div>
+            </div>
+            <hr>
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Date flight<span class="required">*</span></label>
+                <div class="col-sm-10">
+                    {{ form.date_flight }}
+                </div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Create">
+        </form>
+    </div>
+
+
+
+</body>
+</html>
+
+
+

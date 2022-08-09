@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tickets - KG</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <style>
+table {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+th {
+  background-color: #fce7bd;
+  color: white;
+}
+
+th,
+td {
+    width: 150px;
+    text-align: center;
+    background-color: #fce7bd;
+    font-size: 100%;
+    color: midnightblue;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+h2 {
+  color: #4287f5;
+}
+    </style>
+</head>
+<body>
+
+  <center>
+    <div class="jumbotron">
+
+        <h1>Tickets - KG</h1>
+
+   <div class='responsive-table'>
+
+       <h2>Tickets list</h2>
+
+       <a href="{% url 'create_listing' %}"><button type="button" class="btn btn-success">Create ticket</button></a>
+
+            <table class = 'highlight '>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>date arrived</th>
+                <th>date flight</th>
+                <th>orders count</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for ticket in data %}
+                <tr>
+                    <td>{{ ticket.id }} </td>
+                    <td><a href="{% url 'ticket' ticket.id %}">{{ ticket.title }}</td>
+                    <td>{{ ticket.price }}$</td>
+                    <td>{{ ticket.date_arrival }}</td>
+                    <td>{{ ticket.date_flight }}</td>
+                    <td>{{ticket.orders}}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+
+    </div>
+</center>
+
+
+</body>
+</html>
